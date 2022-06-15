@@ -1,7 +1,7 @@
 name: Run Cypress In Docker
 on: [push]
 jobs:
-  Cpyress-Docker:
+  Cypress-Docker:
     runs-on: ubuntu-latest
     steps:
       - name: Use Node.js 16.x
@@ -9,5 +9,6 @@ jobs:
         with:
           node-version: 16.x
           cache: 'npm'
+      - run: npm install
       - run: yarn install
       - run: yarn cypress:docker
