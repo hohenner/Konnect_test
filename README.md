@@ -7,7 +7,7 @@ I am intending on integrating with [Github Actions](https://docs.github.com/en/a
 ## Work to do
 - [x] setup Cypress
 - [x] Dockerize Cypress framework
-- [ ] Integrate with CI infrastructure
+- [x] Integrate with CI infrastructure
 - [ ] Build out tests
 
 ## Why Cypress 
@@ -18,6 +18,7 @@ I am intending on integrating with [Github Actions](https://docs.github.com/en/a
 ## Why Docker
 1. Simplifies execution in CI
 1. Enables people to run the tests without needing to setup/install Cypress
+1. Github Actions do not need Docker so have not setup variables or configured for advanced tests
 
 ## Problems seen
 ### Cannot set properties of undefined (setting 'status')
