@@ -13,13 +13,25 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   if (err.message.includes("setting 'status'")) {
     return false
   }
-  
+
   // we still want to ensure there are no other unexpected
   // errors, so we let them fail the test
 })
 
 
-describe('empty spec', () => {
+describe('access ServiceHub', () => {
+  it('passes', () => {
+    cy.visit("") 
+  })
+})
+
+describe('create new Service', () => {
+  it('passes', () => {
+    cy.visit("") 
+  })
+})
+
+describe('add entities', () => {
   it('passes', () => {
     cy.visit("") 
   })
