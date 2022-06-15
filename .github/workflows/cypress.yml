@@ -1,5 +1,9 @@
 name: Run Cypress In Docker
 on: [push]
+
+env:
+  CYPRESS_USER: quality+andy.hohenner@konghq.com
+  # CYPRESS_PASSWORD: in Github UI secrets
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
