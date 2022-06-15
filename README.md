@@ -7,8 +7,28 @@ I am intending on integrating with [Github Actions](https://docs.github.com/en/a
 ## Work to do
 - [x] setup Cypress
 - [x] Dockerize Cypress framework
+
+### Tests to Run
+- [ ] Authenticate and access ServiceHub
+- [ ] Complete the flow to create a new Service
+- [ ] Create any additional entities associated with a Service
+
+### Nice to haves
+- [ ] Generate Reporting
 - [x] Integrate with CI infrastructure
-- [ ] Build out tests
+
+## How to run
+To setup run:
+ ```
+ npm install
+ yarn install
+ ```
+
+To run:
+```
+yarn cypress:run
+```
+
 
 ## Why Cypress 
 1. I believe Javascript is in the Kong technology stack, and using testing frameworks that are in the same language to facilitate discussion
