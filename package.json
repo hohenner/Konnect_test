@@ -1,0 +1,28 @@
+{
+  "name": "konnect_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Test Output\"",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:docker": "docker run -it -v $PWD:/e2e -w /e2e cypress/included:10.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hohenner/Konnect_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hohenner/Konnect_test/issues"
+  },
+  "homepage": "https://github.com/hohenner/Konnect_test#readme",
+  "devDependencies": {
+    "cypress": "^10.1.0"
+  },
+  "dependencies": {
+    "n": "^8.2.0"
+  }
+}
