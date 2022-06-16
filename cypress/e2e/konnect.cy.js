@@ -22,17 +22,22 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 describe('access ServiceHub', () => {
   it('passes', () => {
     cy.visit("") 
+    cy.get('#email').click()
+    cy.get('#email').type(Cypress.env('USER'))
+    cy.get('#password').click()
+    cy.get('#password').type(Cypress.env('PASSWORD'))
+    cy.get('button[type=submit]').click()
   })
 })
 
-describe('create new Service', () => {
-  it('passes', () => {
-    cy.visit("") 
-  })
-})
+// describe('create new Service', () => {
+//   it('passes', () => {
+//     cy.visit("") 
+//   })
+// })
 
-describe('add entities', () => {
-  it('passes', () => {
-    cy.visit("") 
-  })
-})
+// describe('add entities', () => {
+//   it('passes', () => {
+//     cy.visit("") 
+//   })
+// })
