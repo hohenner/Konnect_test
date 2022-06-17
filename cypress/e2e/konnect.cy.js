@@ -28,6 +28,14 @@ describe('access ServiceHub', () => {
     cy.get('#password').type(Cypress.env('PASSWORD'))
     cy.get('button[type=submit]').click()
   })
+
+
+  it('has valid env values', () => {
+    expect(Cypress.env())
+      .to.be.an('object')
+      .and.to.include.keys('USER', 'PASSWORD')
+  })
+
 })
 
 // describe('create new Service', () => {
