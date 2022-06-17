@@ -9,7 +9,7 @@ I am intending on integrating with [Github Actions](https://docs.github.com/en/a
 - [x] Dockerize Cypress framework
 
 ### Tests to Run
-- [ ] Authenticate and access ServiceHub
+- [x] Authenticate and access ServiceHub
 - [ ] Complete the flow to create a new Service
 - [ ] Create any additional entities associated with a Service
 
