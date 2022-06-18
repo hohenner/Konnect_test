@@ -10,8 +10,8 @@ I am intending on integrating with [Github Actions](https://docs.github.com/en/a
 
 ### Tests to Run
 - [x] Authenticate and access ServiceHub
-- [ ] Complete the flow to create a new Service
-- [ ] Create any additional entities associated with a Service
+- [x] Complete the flow to create a new Service
+- [x] Create any additional entities associated with a Service
 
 ### Nice to haves
 - [ ] Generate Reporting
@@ -43,10 +43,13 @@ yarn cypress:run
 ## Next steps
 1. decide if cypress is the right driver for a framework 
 1. remove wait states
-1. setup real framework of re-usable code
-1. setup Page Object Model
-1. 
+1. setup real framework of re-usable code (?Keyword driven?)
+1. setup Page Object Model (abstract out css selectors out of code)
+1. add document upload functionality
 
 ## Problems seen
 ### Cannot set properties of undefined (setting 'status')
 I recieved this error in trying to load the homepage for Konnect, I wound up capturing the exception and swallowing it. Need to do further exploration on what the cause of the error is, looks like the New Relic Agent
+### Cypress issues
+1. Cypress has longer loading pages than in person, need to figure out why and handle better
+1. Cypress occasionally loads the UI without CSS which causes the scripts to fail, investigate why/how to fix.
