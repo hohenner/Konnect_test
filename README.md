@@ -40,6 +40,13 @@ yarn cypress:run
 1. Enables people to run the tests without needing to setup/install Cypress
 1. Github Actions do not need Docker so have not setup variables or configured for advanced tests
 
+## Next steps
+1. decide if cypress is the right driver for a framework 
+1. remove wait states
+1. setup real framework of re-usable code
+1. setup Page Object Model
+1. 
+
 ## Problems seen
 ### Cannot set properties of undefined (setting 'status')
 I recieved this error in trying to load the homepage for Konnect, I wound up capturing the exception and swallowing it. Need to do further exploration on what the cause of the error is, looks like the New Relic Agent
