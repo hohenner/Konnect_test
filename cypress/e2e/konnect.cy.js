@@ -18,27 +18,61 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   // errors, so we let them fail the test
 })
 
+const title = 'Test_Service_' + Date.now()
 
-describe('access ServiceHub', () => {
-  it('passes', () => {
-    cy.visit("") 
+function login(user,password) {
+  cy.visit("") 
     cy.get('#email').click()
-    cy.get('#email').type(Cypress.env('USER'))
+    cy.get('#email').type(user)
     cy.get('#password').click()
-    cy.get('#password').type(Cypress.env('PASSWORD'))
+    cy.get('#password').type(password)
     cy.get('button[type=submit]').click()
-    cy.get('a.k-button.primary').should('be.visible')
+}
+
+describe('Konnet tests', () => {
+  it('Access Service Hub', () => {
+    login(Cypress.env('USER'),Cypress.env('PASSWORD'))
+    cy.get('a[data-tourid=create-service-btn]').should('be.visible')
   })
+
+  it('create new Service', () => {
+    login(Cypress.env('USER'),Cypress.env('PASSWORD'))
+    cy.get('a[data-tourid=create-service-btn]').click()
+    cy.get('div[data-testid~=title-create]', { timeout: 100000 }).should('be.visible');
+    cy.get('#name').type(title)
+    cy.get('#version').type(title)
+    cy.get('#description').type(title)
+    cy.get('button[type=submit]').click()    
+    cy.get('div[data-testid=packageName]', { timeout: 100000 }).should('contain',title)
+  })
+
+
+  it('add version', () => {
+    const timestamp = Date.now()
+    login(Cypress.env('USER'),Cypress.env('PASSWORD'))
+    cy.get(`div[data-testid=${title}`).contains(title).should('have.length',1)
+    cy.get(`div[data-testid=${title}`).find('.k-card-body').should('have.length',1)
+    cy.get(`div[data-testid=${title}`).contains(title).click()
+    cy.get('div[data-testid=packageName]', { timeout: 100000 }).should('contain',title)
+    cy.get('button[data-testid=service-package-actions').click()
+    cy.get('li[data-testid=add-version]').find('button').click()
+    cy.get('input[name=version]', { timeout: 100000 }).type(timestamp)
+    cy.get('button[type=submit]').click()    
+    cy.get(`div[data-testid=title-${timestamp}]`, { timeout: 100000 }).should('contain',timestamp)
+  })
+
+  // it('add version', () => {
+  //   const timestamp = Date.now()
+  //   login(Cypress.env('USER'),Cypress.env('PASSWORD'))
+  //   cy.get(`div[data-testid=${title}`).contains(title).should('have.length',1)
+  //   cy.get(`div[data-testid=${title}`).find('.k-card-body').should('have.length',1)
+  //   cy.get(`div[data-testid=${title}`).contains(title).click()
+  //   cy.get('div[data-testid=packageName]', { timeout: 100000 }).should('contain',title)
+  //   cy.get('button[data-testid=service-package-actions').click()
+  //   cy.get('li[data-testid=add-version]').find('button').click()
+  //   cy.get('input[name=version]', { timeout: 100000 }).type(timestamp)
+  //   cy.get('button[type=submit]').click()    
+  //   cy.get(`div[data-testid=title-${timestamp}]`, { timeout: 100000 }).should('contain',timestamp)
+  //   cy.screenshot()
+  // })
 })
-
-// describe('create new Service', () => {
-//   it('passes', () => {
-//     cy.visit("") 
-//   })
-// })
-
-// describe('add entities', () => {
-//   it('passes', () => {
-//     cy.visit("") 
-//   })
-// })
