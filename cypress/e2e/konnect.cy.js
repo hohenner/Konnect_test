@@ -61,18 +61,10 @@ describe('Konnet tests', () => {
     cy.get(`div[data-testid=title-${timestamp}]`, { timeout: 100000 }).should('contain',timestamp)
   })
 
-  // it('add version', () => {
-  //   const timestamp = Date.now()
-  //   login(Cypress.env('USER'),Cypress.env('PASSWORD'))
-  //   cy.get(`div[data-testid=${title}`).contains(title).should('have.length',1)
-  //   cy.get(`div[data-testid=${title}`).find('.k-card-body').should('have.length',1)
-  //   cy.get(`div[data-testid=${title}`).contains(title).click()
-  //   cy.get('div[data-testid=packageName]', { timeout: 100000 }).should('contain',title)
-  //   cy.get('button[data-testid=service-package-actions').click()
-  //   cy.get('li[data-testid=add-version]').find('button').click()
-  //   cy.get('input[name=version]', { timeout: 100000 }).type(timestamp)
-  //   cy.get('button[type=submit]').click()    
-  //   cy.get(`div[data-testid=title-${timestamp}]`, { timeout: 100000 }).should('contain',timestamp)
-  //   cy.screenshot()
+  // it('add details to new version', () => {
   // })
+
+  // it('upload service documents', () => {
+  // })
+
 })
