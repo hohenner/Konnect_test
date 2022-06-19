@@ -49,7 +49,7 @@ yarn cypress:run
 
 ## Problems seen
 ### Cannot set properties of undefined (setting 'status')
-I recieved this error in trying to load the homepage for Konnect, I wound up capturing the exception and swallowing it. Need to do further exploration on what the cause of the error is, looks like the New Relic Agent
+I recieved this error in trying to load the homepage for Konnect, Cypress says it's passed from the application being tested. I wound up capturing the exception and swallowing it. Need to do further exploration on what the cause of the error is, looks like the New Relic Agent
 ### Cypress issues
 1. Cypress has longer loading pages than in person, need to figure out why and handle better
 1. Cypress occasionally loads the UI without CSS which causes the scripts to fail, investigate why/how to fix.
