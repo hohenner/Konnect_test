@@ -1,6 +1,11 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  reporter: 'junit',
+  reporterOptions: {
+  
+  },
+
   video: false,
 
   e2e: {
