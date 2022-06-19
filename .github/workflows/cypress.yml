@@ -17,7 +17,7 @@ jobs:
           CYPRESS_USER: quality+andy.hohenner@konghq.com
           CYPRESS_PASSWORD: ${{ secrets.CYPRESS_PASSWORD }}
       - name: Archive test results
-          uses: actions/upload-artifact@v3
-          with:
-            name: test-report
-            path: test-results.xml
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: test-results.xml
