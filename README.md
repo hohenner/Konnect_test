@@ -14,7 +14,7 @@ I am intending on integrating with [Github Actions](https://docs.github.com/en/a
 - [x] Create any additional entities associated with a Service
 
 ### Nice to haves
-- [ ] Generate Reporting
+- [x] Generate Reporting
 - [x] Integrate with CI infrastructure
 
 ## How to run
