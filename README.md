@@ -28,7 +28,11 @@ To run:
 ```
 yarn cypress:run
 ```
-
+You need to have environment variables defined:
+| variable name | Description
+| --- | --- |
+| CYPRESS_USER | User name to log into Konnect |
+| CYPRESS_PASSWORD | Password connected to CYPRESS_USER |
 
 ## Why Cypress 
 1. I believe Javascript is in the Kong technology stack, and using testing frameworks that are in the same language to facilitate discussion
@@ -38,14 +42,23 @@ yarn cypress:run
 ## Why Docker
 1. Simplifies execution in CI
 1. Enables people to run the tests without needing to setup/install Cypress
-1. Github Actions do not need Docker so have not setup variables or configured for advanced tests
+1. Github Actions do not need Docker so have not setup to used the environment variables or configured for advanced tests
 
 ## Next steps
 1. decide if cypress is the right driver for a framework 
+    1. does not have good API testing support
 1. remove wait states
 1. setup real framework of re-usable code (?Keyword driven?)
 1. setup Page Object Model (abstract out css selectors out of code)
 1. add document upload functionality
+1. add capturing performance metrics
+1. add more negative tests
+    1. invalid inputs
+1. add security test. 
+    1. sql injection
+    1. URL hacking
+1. add more elements / expansive testing
+1. possible to replicate these tests via API? - Automate
 
 ## Problems seen
 ### Cannot set properties of undefined (setting 'status')

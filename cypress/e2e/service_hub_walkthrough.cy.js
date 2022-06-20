@@ -35,6 +35,12 @@ describe('Konnet tests', () => {
     cy.get('a[data-tourid=create-service-btn]').should('be.visible')
   })
 
+  it('Access Service Hub - invalid password', () => {
+    login(Cypress.env('USER'),'bad_password')
+    cy.get('div[data-testid=unauthenticated-message]').should('be.visible')
+    cy.get('div[data-testid=unauthenticated-message]').should('contain','Incorrect username or password.')
+  })
+
   it('create new Service', () => {
     login(Cypress.env('USER'),Cypress.env('PASSWORD'))
     cy.get('a[data-tourid=create-service-btn]').click()
