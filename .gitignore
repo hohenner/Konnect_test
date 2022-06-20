@@ -352,3 +352,5 @@ MigrationBackup/
 
 profile_konnect
 test-results.xml
+cypress/screenshots
+cypress/videos
