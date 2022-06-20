@@ -25,5 +25,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: screenshots
-          path: cypress/screenshots/
-          if-no-files-found: ignore
+          path: cypress/screenshots/*
+          # if-no-files-found: ignore
