@@ -47,6 +47,7 @@ You need to have environment variables defined:
 ## Next steps
 1. decide if cypress is the right driver for a framework 
     1. does not have good API testing support
+    1. flaky runs on UI
 1. remove wait states
 1. setup real framework of re-usable code (?Keyword driven?)
 1. setup Page Object Model (abstract out css selectors out of code)
