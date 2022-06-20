@@ -57,7 +57,7 @@ describe('Konnet tests', () => {
   it('add version', () => {
     const timestamp = Date.now()
     login(Cypress.env('USER'),Cypress.env('PASSWORD'))
-    cy.get(`div[data-testid=${title}`).contains(title).should('have.length',1)
+    cy.get(`div[data-testid~=${title}`).contains(title).should('have.length',1)
     cy.get(`div[data-testid=${title}`).find('.k-card-body').should('have.length',1)
     cy.get(`div[data-testid=${title}`).contains(title).click()
     cy.get('div[data-testid=packageName]', { timeout: 100000 }).should('contain',title)
@@ -73,5 +73,18 @@ describe('Konnet tests', () => {
 
   // it('upload service documents', () => {
   // })
+
+  it('add version', () => {
+    const timestamp = Date.now()
+    login(Cypress.env('USER'),Cypress.env('PASSWORD'))
+    cy.get(`div[data-testid~=${title}`).contains(title).should('have.length',1)
+    cy.get(`div[data-testid=${title}`).find('.k-card-body').should('have.length',1)
+    cy.get(`div[data-testid=${title}`).contains(title).click()
+    cy.get('div[data-testid=packageName]', { timeout: 100000 }).should('contain',title)
+    cy.get('button[data-testid=service-package-actions').click()
+    cy.get('li[data-testid=delete-service]').find('button').click()
+    cy.get('button[data-testid=confirm-delete]').click()
+    cy.get('a[data-tourid=create-service-btn]').should('be.visible')
+  })
 
 })

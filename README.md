@@ -67,3 +67,11 @@ I recieved this error in trying to load the homepage for Konnect, Cypress says i
 ### Cypress issues
 1. Cypress has longer loading pages than in person, need to figure out why and handle better
 1. Cypress occasionally loads the UI without CSS which causes the scripts to fail, investigate why/how to fix.
+
+### Certificate issue
+```
+[1652:0620/080057.952954:ERROR:cert_verify_proc_builtin.cc(681)] CertVerifyProcBuiltin for cdn.segment.com failed:
+----- Certificate i=0 (OU=Cypress Proxy Server Certificate,O=Cypress Proxy CA,L=Internet,ST=Internet,C=Internet,CN=cdn.segment.com) -----
+ERROR: No matching issuer found
+```
+understand source and solution

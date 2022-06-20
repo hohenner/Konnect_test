@@ -6,8 +6,6 @@ module.exports = defineConfig({
   
   },
 
-  video: false,
-
   e2e: {
     baseUrl: "https://konnect.konghq.com",
     // setupNodeEvents(on, config) {
