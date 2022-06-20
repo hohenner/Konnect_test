@@ -19,8 +19,5 @@ jobs:
       - name: Archive test results
         uses: actions/upload-artifact@v3
         with:
-          name: results
-          path: |
-            test-results.xml
-            cypress/screenshots/*
-          if-no-files-found: ignore
+          name: test results
+          path: test-results.xml
