@@ -19,11 +19,8 @@ jobs:
       - name: Archive test results
         uses: actions/upload-artifact@v3
         with:
-          name: test-report
-          path: test-results.xml
-    #  - name: Archive screenshots
-    #     uses: actions/upload-artifact@v3
-    #     with:
-    #       name: screenshots
-    #       path: cypress/screenshots/*
-          # if-no-files-found: ignore
+          name: results
+          path: |
+            test-results.xml
+            cypress/screenshots/*
+          if-no-files-found: ignore
