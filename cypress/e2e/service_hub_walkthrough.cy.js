@@ -39,6 +39,7 @@ describe('Konnet tests', () => {
     login(Cypress.env('USER'),'bad_password')
     cy.get('div[data-testid=unauthenticated-message]').should('be.visible')
     cy.get('div[data-testid=unauthenticated-message]').should('contain','Incorrect username or password.')
+    cy.get('a[data-tourid=create-service-btn]').should('not.exist')
   })
 
   it('create new Service', () => {
